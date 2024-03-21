@@ -1,3 +1,6 @@
+notebooks/**/*.tif
+notebooks/**/*.tif.aux.xml
+
 ##### Python general ######
 
 # VS code.

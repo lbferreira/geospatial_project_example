@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "s2scan"
+name = "mygeopackage"
 version = "0.0.1"
 readme = "README.md"
 description = "A demonstrative geospatial package."
@@ -14,12 +14,11 @@ dependencies = [
     "pandas",
     "matplotlib",
     "rasterio",
-    "geopandas",
 ]
 
 [tool.setuptools.packages.find]
 where = ["src"]  # list of folders that contain the packages (["."] by default)
-include = ["mypackage*"]  # package names should match these glob patterns (["*"] by default)
+include = ["mygeopackage*"]  # package names should match these glob patterns (["*"] by default)
 #exclude = []  # exclude packages matching these glob patterns (empty by default)
 
 # Optional. Used to configure black (autoformatter)
