@@ -55,6 +55,6 @@ In the folder [notebooks](./notebooks/) there are three Jupyter notebooks with e
 - [example_refactored.ipynb](./notebooks/example_refactored.ipynb): This a proposed refactored version of the code in the previous notebook.
 - [s2scan.ipynb](./notebooks/s2scan.ipynb): Example of a code with good practices.
 
-## Aditional information
+## Additional information
 This material was created as a part of an internal training for the members of the lab [GCER](https://www.gcerlab.com/)
 ![](./docs/gcer_logo.png)
