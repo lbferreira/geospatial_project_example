@@ -47,6 +47,8 @@ project_root_folder/
 - `pyproject.toml`: File to specify the project configuration, such as the package name, version, and dependencies.
 - `README.md`: File to describe the repository.
 
+Once you project is organized in this way, you can use pip to install the package in development mode. This way, you can make changes to the code and test it without the need to reinstall the package. The file pyproject.toml is responsible for providing the information needed to install the package. The installation can be done using `pip install -e .` from the root of the repository. If you install it using only `pip install .`, the package will be installed and if you modify the code you will need to reinstall the package to see the changes.
+
 ## Code examples
 In the folder [notebooks](./notebooks/) there are three Jupyter notebooks with examples on how to improve code quality. It's not intended to be the best way to do the tasks provided, but it present some useful tips to improve code quality.
 - [example.ipynb](./notebooks/example.ipynb): Example of a code with bad practices.
