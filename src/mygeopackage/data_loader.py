@@ -8,7 +8,46 @@ import rasterio
 from .data_structures import GeoParams, ImageStack
 
 
-def get_georrefferencing_parameters(file_path: Union[Path, List[Path]]) -> GeoParams:
+def stack_months(
+    scan_results: pd.DataFrame, target_months: Optional[List[int]] = None
+) -> ImageStack:
+    """Stack rasters. Each band is stacked separately.
+
+    Args:
+        scan_results (pd.DataFrame): DataFrame with the metadata/paths of the images.
+        target_months (Optional[List[int]], optional): list of months to be stacked. If None,
+        all months are stacked. Defaults to None.
+
+    Returns:
+        ImageStack: stacked rasters.
+    """
+    band_stack = {}
+    file_paths_used = []
+    for row in scan_results.itertuples():
+        file_path = row.file_path
+        month = row.month
+        band = row.band
+        # Skip months not in the target_months list
+        if target_months is not None and month not in target_months:
+            continue
+        # Read raster
+        with rasterio.open(file_path) as src:
+            raster = src.read()
+        file_paths_used.append(file_path)
+
+        if band not in band_stack.keys():
+            band_stack[band] = []
+        band_stack[band].append(raster)
+
+    for key, value in band_stack.items():
+        band_stack[key] = np.concatenate(value, axis=0)
+
+    georref_params = _get_georrefferencing_parameters(file_paths_used)
+    stack = ImageStack(band_stack, georref_params)
+    return stack
+
+
+def _get_georrefferencing_parameters(file_path: Union[Path, List[Path]]) -> GeoParams:
     """Get georeferencing parameters from one or more raster files.
     All rasters must have the same georeferencing parameters.
 
@@ -42,43 +81,6 @@ def get_georrefferencing_parameters(file_path: Union[Path, List[Path]]) -> GeoPa
                     f"Nodata parameters are different. First raster: {geo_params.nodata}, current raster: {nodata}"
                 )
     return geo_params
-
-
-def stack_months(scan_results: pd.DataFrame, target_months: Optional[List[int]] = None) -> ImageStack:
-    """Stack rasters. Each band is stacked separately.
-
-    Args:
-        scan_results (pd.DataFrame): DataFrame with the metadata/paths of the images.
-        target_months (Optional[List[int]], optional): list of months to be stacked. If None,
-        all months are stacked. Defaults to None.
-
-    Returns:
-        ImageStack: stacked rasters.
-    """
-    band_stack = {}
-    file_paths_used = []
-    for row in scan_results.itertuples():
-        file_path = row.file_path
-        month = row.month
-        band = row.band
-        # Skip months not in the target_months list
-        if target_months is not None and month not in target_months:
-            continue
-        # Read raster
-        with rasterio.open(file_path) as src:
-            raster = src.read()
-        file_paths_used.append(file_path)
-
-        if band not in band_stack.keys():
-            band_stack[band] = []
-        band_stack[band].append(raster)
-
-    for key, value in band_stack.items():
-        band_stack[key] = np.concatenate(value, axis=0)
-
-    georref_params = get_georrefferencing_parameters(file_paths_used)
-    stack = ImageStack(band_stack, georref_params)
-    return stack
 
 
 class ImageScanner:
