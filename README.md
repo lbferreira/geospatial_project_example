@@ -54,6 +54,7 @@ In the folder [notebooks](./notebooks/) there are three Jupyter notebooks with e
 - [example.ipynb](./notebooks/example.ipynb): Example of a code without a proper structure.
 - [example_refactored.ipynb](./notebooks/example_refactored.ipynb): This is a proposed refactored version of the code in the previous notebook. In this version, we have a better structure, making it much easier to run the code with different configurations.
 - [s2scan.ipynb](./notebooks/s2scan.ipynb): Example of a code with good practices.
+
 More information on the examples can be found in the notebooks.
 
 ## Additional information
