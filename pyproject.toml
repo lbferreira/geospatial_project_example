@@ -14,6 +14,7 @@ dependencies = [
     "pandas",
     "matplotlib",
     "rasterio",
+    "pyproj",
 ]
 
 [tool.setuptools.packages.find]
