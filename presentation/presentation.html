@@ -444,7 +444,7 @@
   <meta name="generator" content="quarto-1.4.552">
 
   <meta name="author" content="Lucas Borges Ferreira">
-  <meta name="dcterms.date" content="2024-05-14">
+  <meta name="dcterms.date" content="2024-05-17">
   <title>📦 Python packages</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1220,7 +1220,23 @@ Lucas Borges Ferreira
 </div>
 </div>
 
-  <p class="date">2024-05-14</p>
+  <p class="date">2024-05-17</p>
+</section>
+<section id="some-challenges-in-python-projects" class="slide level2">
+<h2>Some challenges in Python projects 🐍</h2>
+<ul>
+<li>How to structure my project?
+<ul>
+<li>A single file?</li>
+<li>Multiple files?</li>
+<li>Multiple directories?</li>
+</ul></li>
+<li>How to manage dependencies?</li>
+<li>How to make my code available to others?</li>
+</ul>
+<p style="text-align:right;">
+<small>Spoiler: Use packages! 📦</small>
+</p>
 </section>
 <section id="why-do-i-need-a" class="slide level2">
 <h2>Why do I need a 📦?</h2>
@@ -1263,7 +1279,7 @@ Lucas Borges Ferreira
 <section id="how-can-a-help-me" class="slide level2">
 <h2>How can a 📦 help me?</h2>
 <blockquote>
-<p>Imagine if you have to read a set of files from a directory (you must support multiple file formats), preprocess the data (different preprocessing algorithm must be supported), and offer tools to visualize and export the data…</p>
+<p>Imagine if you have to read a set of satellite images from a directory (you must support multiple file formats), preprocess the data (different preprocessing algorithm must be provided), and offer tools to visualize and export the data…</p>
 </blockquote>
 <blockquote>
 <p>You could write a single python file that does all of this, but it would be a mess. Instead, you could create a package that contains a module or subpackage for each of these task categories.</p>
@@ -1317,8 +1333,9 @@ Lucas Borges Ferreira
 <section id="packaging-python-projects" class="slide level2">
 <h2>Packaging Python projects</h2>
 <ul>
-<li>So far you learned the core structure of a package, but to package a project you also need some configuration files</li>
+<li>So far you learned the core structure of a package, but to “package” a project you also need some configuration files</li>
 <li>Once you have the required files, you can install your package using <code>pip</code></li>
+<li><code>pip</code> is the package installer for Python. It can install packages from PyPI (Python Package Index) or other sources</li>
 </ul>
 </section>
 <section id="python-project-example" class="slide level2">
@@ -1354,7 +1371,7 @@ Lucas Borges Ferreira
 <ul>
 <li>Remove current modules/subpackages and create a single module with an example function</li>
 <li>Adjust <code>pyproject.toml</code></li>
-<li>Create a new conda enviroment</li>
+<li>Create a new conda environment</li>
 <li>Intall the package using <code>pip</code></li>
 </ul>
 </section>
