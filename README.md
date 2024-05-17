@@ -53,7 +53,6 @@ Once your project is organized in this way, you can use pip to install it in dev
 In the folder [notebooks](./notebooks/) there are three Jupyter notebooks with examples on how to improve code quality. It's not intended to be the best way to do the proposed tasks, but it present some useful tips to improve code quality, making it more organized, maintainable, and scalable.
 - [example.ipynb](./notebooks/example.ipynb): Example of a code without a proper structure.
 - [example_refactored.ipynb](./notebooks/example_refactored.ipynb): This is a proposed refactored version of the code in the previous notebook. In this version, we have a better structure, making it much easier to run the code with different configurations.
-- [s2scan.ipynb](./notebooks/s2scan.ipynb): Example of a code with good practices.
 
 More information on the examples can be found in the notebooks.
 
