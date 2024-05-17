@@ -38,7 +38,7 @@ project_root_folder/
 │  README.md
 ```
 
-- `data/`: Folder to store data used in the project. However, it's not recommended to store large files in the repository. Overall, you just keep code and some small files in the repository.
+- `data/`: Folder to store data used in the project. However, if you are using Git, it's not recommended to store large files in the remote repository. You can keep them locally and use a `.gitignore` file to avoid uploading them to the remote repository. Data can also be stored in a cloud service and downloaded when needed.
 - `docs/`: Folder to store documentation files, such PDFs, images, documents, etc.
 - `notebooks/`: Folder to store Jupyter notebooks. It's recommended to use notebooks only for exploratory analysis or experiments. The "heavy" code should be in the package folder.
 - `src/mypackage/`: Folder to store the package code. You can also use subpackages.
