@@ -1,7 +1,7 @@
 # Example project
 It's an example repository intended to demonstrate how to create a geospatial project with Python using good software development practices. It's also intended to be used as a template for future projects.
-
-This repository is organized as a Python package and additional code for running experiments.
+This repository is organized as a Python package and additional code to import use the package.
+A presentation about Python packages is available [here](./presentation/presentation.pdf).
 
 ## Dependencies management and package installation
 The following command can be used to recreate the conda enviroment with all the dependencies needed to run the code in this repository. The package is also installed in development mode. This command should be run from the root of the repository.
