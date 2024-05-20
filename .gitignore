@@ -1,5 +1,8 @@
-notebooks/**/*.tif
-notebooks/**/*.tif.aux.xml
+# Here you can add file extensions that you want to ignore in the project.
+# For example, exluding geotiff files can be helpful if you are generating a lot of them while working on the project.
+# To ignore a file extension, add it to the list below.
+# For example, to ignore geotiff files, add *.tif to the list below.
+
 
 ##### Python general ######
 
